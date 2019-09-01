@@ -1,7 +1,5 @@
 package com.jl.sort.com.jl.sort.inner_sort;
 
-import com.jl.sort.com.jl.sort.inner_sort.com.jl.find.BinarySearch;
-
 import java.util.Arrays;
 
 public class Test {
