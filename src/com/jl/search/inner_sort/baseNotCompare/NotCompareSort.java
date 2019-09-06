@@ -23,7 +23,7 @@ public class NotCompareSort {
             arrayList.add(Integer.valueOf(arr[i]));
         }
         BucketSort mergeSort = new BucketSort();
-        ArrayList<Integer> result = mergeSort.bucketSortMethod(arrayList,10);
+        ArrayList<Integer> result = mergeSort.bucketSortMethod(arrayList,1);
         for (int i:result) {
             System.out.print(i+" ");
         }
@@ -37,6 +37,9 @@ public class NotCompareSort {
 /**
  *  计数排序：一种线性时间复杂度的排序，计数排序要求输入的数据必须是有确定范围的整数
  *  稳定排序
+ *  思想：1.查找出要排序数组A的最大值和最小值，并创建一个[最大值 - 最小值 + 1]长度的数组B
+ *        2.B数组元素的值代表：A中值与B的坐标相同的元素的个数
+ *        3.遍历A数组，并将B中记录的值，排序到A数组中
  *
  */
 class CountingSort{
@@ -77,9 +80,14 @@ class CountingSort{
 
 /**
  *   桶排序：计数排序的进化
+ *
  */
 class BucketSort{
-
+    /**
+     * @param array
+     * @param bucketSize  桶内容器的大小
+     * @return
+     */
     public  ArrayList<Integer> bucketSortMethod(ArrayList<Integer> array, int bucketSize) {
         if (array == null || array.size() < 2)
             return array;
@@ -91,23 +99,32 @@ class BucketSort{
             if (array.get(i) < min)
                 min = array.get(i);
         }
+        // 桶的数量
         int bucketCount = (max - min) / bucketSize + 1;
+        // 创建桶数组
         ArrayList<ArrayList<Integer>> bucketArr = new ArrayList<>(bucketCount);
-        ArrayList<Integer> resultArr = new ArrayList<>();
         for (int i = 0; i < bucketCount; i++) {
+            // 创建桶内的容器
             bucketArr.add(new ArrayList<Integer>());
         }
+        // 将元素放入桶内容器
         for (int i = 0; i < array.size(); i++) {
+            //  元素放入桶内的容器:
+            //  放入数据的时候，桶与桶之间的数据是有序的，桶内容器中的数据是无序的
             bucketArr.get((array.get(i) - min) / bucketSize).add(array.get(i));
         }
+
+        ArrayList<Integer> resultArr = new ArrayList<>();
+        // 遍历所有的桶
         for (int i = 0; i < bucketCount; i++) {
-            if (bucketSize == 1) { // 如果带排序数组中有重复数字时  感谢 @见风任然是风 朋友指出错误
+            // 当桶内容器大小为1时，相当于对数组中的数据进行排序
+            if (bucketSize == 1 && bucketArr.get(i).size() != 0) {
                 for (int j = 0; j < bucketArr.get(i).size(); j++)
+                    // 访问桶中容器的数据
                     resultArr.add(bucketArr.get(i).get(j));
             } else {
-                if (bucketCount == 1)
-                    bucketSize--;
-                ArrayList<Integer> temp = bucketSortMethod(bucketArr.get(i), bucketSize);
+                // 对桶内容器进行排序
+                ArrayList<Integer> temp = bucketSortMethod(bucketArr.get(i), 1);
                 for (int j = 0; j < temp.size(); j++)
                     resultArr.add(temp.get(j));
             }
