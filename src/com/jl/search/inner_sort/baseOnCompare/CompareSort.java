@@ -18,6 +18,13 @@ public class CompareSort {
 		BubbleSort bubbleSort = new BubbleSort();
 		bubbleSort.bubbleSortMethod(arr);
 		System.out.println(Arrays.toString(arr));*/
+
+		Integer[] arr = {5,0,-1,20,11,-7,2,-2,4,-6,3,-7,8,1,100,-7,-1};
+
+		HeapSort heapSort = new HeapSort();
+		heapSort.heapSortMethod(arr);
+		System.out.println(Arrays.toString(arr));
+
 		
 	}
 	
