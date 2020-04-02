@@ -1,4 +1,4 @@
-package com.jl.sort.com.jl.sort.inner_sort.com.jl.find;
+package com.jl.search;
 
 public class BinarySearch {
 	

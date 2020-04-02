@@ -1,8 +1,10 @@
-package com.jl.sort.com.jl.sort.inner_sort;
+package com.jl.search.inner_sort.baseOnCompare;
 
 import java.util.Arrays;
-
-public class Test {
+/*
+    基于比较排序
+ */
+public class CompareSort {
 	
 	public static void main(String[] args) 
 	{
@@ -16,13 +18,13 @@ public class Test {
 		BubbleSort bubbleSort = new BubbleSort();
 		bubbleSort.bubbleSortMethod(arr);
 		System.out.println(Arrays.toString(arr));*/
-		
-		
-		// 归并专属
-		int[] arr = {5,0,-1,20,11,-7,2,-2,4,-6,3,-7,8,1,100,-7,-1};
-		MergeSort bubbleSort = new MergeSort();
-		int[] mergeSortMethod = bubbleSort.mergeSortMethod(arr);
-		System.out.println(Arrays.toString(mergeSortMethod));
+
+		Integer[] arr = {5,0,-1,20,11,-7,2,-2,4,-6,3,-7,8,1,100,-7,-1};
+
+		HeapSort heapSort = new HeapSort();
+		heapSort.heapSortMethod(arr);
+		System.out.println(Arrays.toString(arr));
+
 		
 	}
 	
@@ -33,7 +35,7 @@ public class Test {
  * 冒泡排序
  *
  */
-class  BubbleSort extends Sort{
+class  BubbleSort extends Sort {
 
 void  bubbleSortMethod(Integer[] arr) {
         //arr.length - 1的目的：一个元素肯定是有序的
@@ -73,43 +75,7 @@ void  bubbleSortMethod(Integer[] arr) {
 		}
 	}
 	
-	/**
-	 * 归并排序：采用分治法
-	 * 稳定排序
-	 * {5,0,-1,20,11,-7,2,-2,4,-6,3,-7,8,1,100,-7,-1}
-	 * 
-	 */
-	class  MergeSort extends  Sort{
-		
-		
-	    public  int[] mergeSortMethod(int[] array) {
-	    	// 数组长度小于2，不再分割数组
-	        if (array.length < 2) return array;
-	        int mid = array.length / 2;
-	        // copy时，区间为[0,mid)
-	        int[] left = Arrays.copyOfRange(array, 0, mid);
-	        int[] right = Arrays.copyOfRange(array, mid, array.length);
-	        return merge(mergeSortMethod(left), mergeSortMethod(right));
-	    }
-	    /**
-	     * 归并排序——将两段排序好的数组结合成一个排序数组
-	     * 
-	     */
-	    public static int[] merge(int[] left, int[] right) {
-	        int[] result = new int[left.length + right.length];
-	        for (int index = 0, i = 0, j = 0; index < result.length; index++) {
-	            if (i >= left.length)// i指向left，超出数组长度直接使用right数组的元素
-	                result[index] = right[j++];
-	            else if (j >= right.length)
-	                result[index] = left[i++];
-	            else if (left[i] > right[j])
-	                result[index] = right[j++];
-	            else
-	                result[index] = left[i++];
-	        }
-	        return result;
-	    }
-	}
+
 	
 	/**
 	 * 

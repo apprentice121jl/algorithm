@@ -1,4 +1,4 @@
-package com.jl.sort.com.jl.sort.inner_sort;
+package com.jl.search.inner_sort.baseOnCompare;
 
 public abstract class Sort {
 
