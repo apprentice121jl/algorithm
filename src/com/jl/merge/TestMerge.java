@@ -1,4 +1,4 @@
-package com.jl.sort.com.jl.sort.inner_sort;
+package com.jl.merge;
 
 import java.util.Arrays;
 
@@ -29,7 +29,9 @@ public class TestMerge {
             }
         }
         System.out.println(i +"   "+j +"   "+ num);
-          num--;
+
+        num--;
+
         if(j < arrX.length){
             while(j<arrX.length ){
                 arr[num++] = arrX[j++];
