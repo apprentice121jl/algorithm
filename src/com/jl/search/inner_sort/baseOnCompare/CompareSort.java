@@ -186,6 +186,7 @@ void  bubbleSortMethod(Integer[] arr) {
 	class  HeapSort extends Sort{
 		
 		public void heapSortMethod(Integer[] arr) {
+			// 构建堆，构建完成后，0位置的值最大
 			buildHeap(arr);
 			System.out.println(Arrays.toString(arr));
 			int i = 0;
@@ -196,6 +197,8 @@ void  bubbleSortMethod(Integer[] arr) {
 				// 调整大根堆
 				heapAdjustment (arr,arr.length - 1- i);
 			}
+
+
 		}
 		
 		/**

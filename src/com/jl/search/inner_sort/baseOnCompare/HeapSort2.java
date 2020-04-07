@@ -17,6 +17,7 @@ public class HeapSort2 {
         for(i = length/2;i >= 0;i--){// 从二叉树第一个非叶子结点建立堆
             shift(arr,i,length);
         }
+
         System.out.println(Arrays.toString(arr));
         for(int j = length-1;j >= 1;j--){// 只需要判断n-1个结点有序
             int tmp=arr[0];
@@ -27,7 +28,7 @@ public class HeapSort2 {
         System.out.println(Arrays.toString(arr));
     }
 
-    static void shift(Integer[] arr,int i,int n){
+    static void shift(Integer[] arr,int i,int n){// 每次获得的根都是最大值
         int temp = arr[i];
         int parent = i;
         int child = 2*i;
