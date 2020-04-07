@@ -187,6 +187,7 @@ void  bubbleSortMethod(Integer[] arr) {
 		
 		public void heapSortMethod(Integer[] arr) {
 			buildHeap(arr);
+			System.out.println(Arrays.toString(arr));
 			int i = 0;
 			while(i < arr.length - 1) {
 				// 将根节点和最后一个值进行交换
