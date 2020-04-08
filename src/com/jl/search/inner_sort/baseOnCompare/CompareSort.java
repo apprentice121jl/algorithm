@@ -19,11 +19,9 @@ public class CompareSort {
 		bubbleSort.bubbleSortMethod(arr);
 		System.out.println(Arrays.toString(arr));*/
 
-		Integer[] arr = {5,0,-1,20,11,-7,2,-2,4,-6,3,-7,8,1,100,-7,-1};
 
-		HeapSort heapSort = new HeapSort();
-		heapSort.heapSortMethod(arr);
-		System.out.println(Arrays.toString(arr));
+
+
 
 		
 	}
@@ -179,84 +177,9 @@ void  bubbleSortMethod(Integer[] arr) {
 		}
 	}
 	
-	/**
-	 * 堆排序：每个结点的值都大于其左孩子和右孩子结点的值，称之为大根堆；
-	 *       每个结点的值都小于其左孩子和右孩子结点的值，称之为小根堆；
-	 */
-	class  HeapSort extends Sort{
-		
-		public void heapSortMethod(Integer[] arr) {
-			// 构建堆，构建完成后，0位置的值最大
-			buildHeap(arr);
-			System.out.println(Arrays.toString(arr));
-			int i = 0;
-			while(i < arr.length - 1) {
-				// 将根节点和最后一个值进行交换
-				swap(arr,0,arr.length-1-i);
-				i++;
-				// 调整大根堆
-				heapAdjustment (arr,arr.length - 1- i);
-			}
 
 
-		}
-		
-		/**
-		 * 调整大根堆
-		 * @param arr
-		 * @param arrLength
-		 */
-		private void  heapAdjustment(Integer[] arr,int arrLength) {
-			int index = 0;      // 指向错误的大根堆
-			int leftChild = 1;  // 2*index + 1
-			int rightChild = 2; // 2*index + 2
-			int largestNum = 0;
-			while(leftChild <= arrLength) {
-				if(rightChild <= arrLength && arr[leftChild] < arr[rightChild]) {// 左孩子和右孩子相比较，右孩子大
-					largestNum = rightChild;
-				}else if(arr[index] < arr[leftChild]){ // 上面不满足时，右节点不存在或者左节点比右节点大 
-					largestNum = leftChild;
-				}else {
-					break;// 已经是最大根节点
-				}
-				swap(arr, largestNum, index);
-				index = largestNum;
-				leftChild = 2*index +1;
-				rightChild = 2*index +2;
-			}
-		}
-		/**
-		 * 构建大根堆
-		 * @param arr
-		 */
-		private void  buildHeap(Integer[] arr) {
-			// i=1:只有一个节点时，一定是大根堆
-			for(int i = 1;i < arr.length; i++) {
-				int j = i;
-				// 只与父节点进行比较，所以左孩子和右孩子是无序的
-				// 父节点坐标：(j-1)/2
-				while(0 < j && arr[(j-1)/2] < arr[j]) {
-					swap(arr, (j-1)/2, j);
-					// 继续查找比当前节点大的父节点
-					j = (j-1)/2;
-				}
-			}
-		}
-	/*	
-	  // TODO 堆排序查询如何做
-	  public int queryElement(Integer[] arr,int element) {
-		  Integer result = null;
-		  for(int i = 0;i < arr.length && 2*i+2 < arr.length;i++) {
-			  if(arr[i] == element) {
-				  result = i;
-				  break;
-			  }
-			 
-			  
-		  }
-		  return result;
-	  }*/
-	}
+
 	
 	
 	
