@@ -1,6 +1,9 @@
 package com.jl.search.inner_sort.baseOnCompare;
 
+import com.jl.search.BinarySearch;
+
 import java.util.Arrays;
+
 /*
     基于比较排序
  */
@@ -8,11 +11,11 @@ public class CompareSort {
 	
 	public static void main(String[] args) 
 	{
-		/*Integer[] arr = {5,0,-1,11,20,2,-2,4,-6,3,-7,-7,8,1};
+		Integer[] arr = {5,0,-1,11,20,2,-2,4,-6,3,-7,-7,8,1};
 		QuickSort test = new QuickSort();
 		test.quickSort(arr, 0, arr.length - 1);
 		System.out.println(Arrays.toString(arr));
-		System.out.println(BinarySearch.binarySearchMethod(-7,arr));*/
+		System.out.println(BinarySearch.binarySearchMethod(-7,arr));
 
 	/*	Integer[] arr = {5,0,-1,20,11,-7,2,-2,4,-6,3,-7,8,1,100,-7,-1};
 		BubbleSort bubbleSort = new BubbleSort();
@@ -135,17 +138,21 @@ void  bubbleSortMethod(Integer[] arr) {
 		
 		void  quickSort(Integer[] arr,Integer left,Integer right)
 		{
-			if( left > right )
+			if( left > right ) // 数组左边下标 > 数组右边下标
 			    return;
+
+			/*Random random = new Random();
+			int i = random.nextInt(right+1);*/
 			
 			Integer l = left;
 			Integer r = right;
-			Integer temp = arr[l]; 
+			Integer temp = arr[l];
+
 			while( r != l )// 退出循环的条件为：r == l
 			{
-				while( r > l )
+				while( l < r )
 				{
-					// 判断比temp小的数值
+					// 判断右边比temp小的数值
 					if(arr[r] >= temp)
 					{
 						r--;
@@ -156,7 +163,7 @@ void  bubbleSortMethod(Integer[] arr) {
 				
 				while(l < r)
 				{
-					// 判断比temp大的数据
+					// 判断左边比temp大的数据
 					if(arr[l] <= temp)
 					{
 						l++;
@@ -169,9 +176,11 @@ void  bubbleSortMethod(Integer[] arr) {
 				swap(arr,l,r);
 				
 			}
-			
+
+			// 按最左位置来取值
 		    arr[left] = arr[r];
 		    arr[r]=temp;
+
 		    quickSort(arr,left,r-1);
 		    quickSort(arr,r+1,right);
 		}

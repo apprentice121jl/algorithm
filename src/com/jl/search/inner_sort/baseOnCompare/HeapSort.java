@@ -10,7 +10,7 @@ import java.util.Arrays;
  *	      每个结点的值都小于其左孩子和右孩子结点的值，称之为小根堆；
  *
  **/
-public class HeapSort2  {
+public class HeapSort {
 
     public static void main(String[] args) {
 
