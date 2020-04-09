@@ -107,13 +107,18 @@ public class BinaryTree {
     public void levelOrder(BinaryTreeNode root){
         BinaryTreeNode temp;
         Queue<BinaryTreeNode> queue=new LinkedList<BinaryTreeNode>();
+        int i = 0;
+        // 入队
         queue.offer(root);
         while(!queue.isEmpty()){
+            // 出队
             temp=queue.poll();
-            System.out.print(temp.getData()+"\t");
-            if(null!=temp.getLeft())
+            System.out.print(temp.getData()+"("+(++i)+")"+"\t");
+            if( temp.getLeft() !=null )
+                // 左节点入队
                 queue.offer(temp.getLeft());
-            if(null!=temp.getRight()){
+            if( temp.getRight() != null ){
+                // 右节点入队
                 queue.offer(temp.getRight());
             }
         }

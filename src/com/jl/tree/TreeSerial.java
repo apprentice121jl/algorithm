@@ -9,7 +9,7 @@ package com.jl.tree;
 public class TreeSerial {
 
     static StringBuffer sb=new StringBuffer();
-    //使用前序遍历序列化二叉树
+    //使用前序序列化二叉树
     // 1. 同一个树的结点在一个括号中
     // 2. 左右子树之间通过逗号隔开
     static String serialize(BinaryTreeNode root) {
@@ -28,7 +28,7 @@ public class TreeSerial {
     }
 
 
-        //反序列化：根据某种遍历方式得到的序列化字符串结果，重构二叉树
+        //反序列化：上面遍历方式得到的序列化字符串结果，重构二叉树
         static BinaryTreeNode deserialize(String str) {
             char[] chs=str.toCharArray();
            /* for (char c:chs) {
