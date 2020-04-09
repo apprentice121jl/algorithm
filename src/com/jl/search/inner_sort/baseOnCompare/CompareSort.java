@@ -38,11 +38,11 @@ public class CompareSort {
 class  BubbleSort extends Sort {
 
 void  bubbleSortMethod(Integer[] arr) {
-        //arr.length - 1的目的：一个元素肯定是有序的
+        // arr.length - 1的目的：一个元素肯定是有序的
         for(int i = 0; i < arr.length - 1; i++) {
             // 每次选出最大的值
             for(int j = 0; j < arr.length - 1 - i ;j++ ) {
-                if( arr[j] > arr[j+1]){
+                if( arr[j] > arr[j+1] ){
                     swap(arr,j,j+1);
                 }
             }
