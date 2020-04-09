@@ -18,7 +18,7 @@ public class BinarySearch {
 	
 	/**
 	 * 二分查找
-	 * @param i
+	 * @param i:代表要查询的值
 	 * @param arr
 	 * @return
 	 */

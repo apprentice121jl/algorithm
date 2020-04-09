@@ -107,6 +107,7 @@ public class BinaryTree {
     public void levelOrder(BinaryTreeNode root){
         BinaryTreeNode temp;
         Queue<BinaryTreeNode> queue=new LinkedList<BinaryTreeNode>();
+        // 用于记录节点所在数组的下标
         int i = 0;
         // 入队
         queue.offer(root);

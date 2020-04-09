@@ -53,7 +53,7 @@ void  bubbleSortMethod(Integer[] arr) {
 	/**
 	 * 选择排序
 	 * 思想： 1.数组分为有序区和无序区两部分；
-	 * 	    2.每次选取无序区最小值的坐标，与无序区中的第一个节点做交换；
+	 * 	     2.每次选取无序区最小值的坐标，与无序区中的第一个节点做交换；
 	 */
 	class SelectSort extends Sort{
 		
