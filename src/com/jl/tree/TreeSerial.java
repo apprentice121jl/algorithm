@@ -65,7 +65,7 @@ public class TreeSerial {
         BinaryTreeNode node8=new BinaryTreeNode(8,null,null);
         BinaryTreeNode node9=new BinaryTreeNode(9,null,null);
 
-        BinaryTreeNode node5=new BinaryTreeNode(5,node10,null);
+        BinaryTreeNode node5=new BinaryTreeNode(5,null,null);
         BinaryTreeNode node4=new BinaryTreeNode(4,node8,node9);
 
         BinaryTreeNode node6=new BinaryTreeNode(6,null,null);

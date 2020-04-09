@@ -17,10 +17,12 @@ public class CompareSort {
 		System.out.println(Arrays.toString(arr));
 		System.out.println(BinarySearch.binarySearchMethod(-7,arr));
 
-	/*	Integer[] arr = {5,0,-1,20,11,-7,2,-2,4,-6,3,-7,8,1,100,-7,-1};
+	/*
+		Integer[] arr = {5,0,-1,20,11,-7,2,-2,4,-6,3,-7,8,1,100,-7,-1};
 		BubbleSort bubbleSort = new BubbleSort();
 		bubbleSort.bubbleSortMethod(arr);
-		System.out.println(Arrays.toString(arr));*/
+		System.out.println(Arrays.toString(arr));
+	*/
 
 
 
