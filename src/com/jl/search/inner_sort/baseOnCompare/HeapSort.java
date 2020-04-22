@@ -22,7 +22,7 @@ public class HeapSort {
         int i;
         for( i = (length/2)-1;i >= 0;i-- ){// 从二叉树第一个非叶子结点建立堆
             // 树的底部开始建树，根节点是最大值
-            shift(arr,i,length);
+            shift(arr,i,length-1);
         }
 
         System.out.println(Arrays.toString(arr));
@@ -52,7 +52,7 @@ public class HeapSort {
 
         while(child < length){// 结点在有效范围内
             // 判断右孩子是否存在且大于左孩子
-            if(child+1 < length && arr[child] < arr[child + 1]){
+            if(child+1 <= length && arr[child] < arr[child + 1]){
                  child++;
             }
             if(temp < arr[child]){// 父节点小于孩子结点
