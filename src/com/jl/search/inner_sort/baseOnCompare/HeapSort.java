@@ -29,13 +29,13 @@ public class HeapSort {
 
 
         int  j = length-1;
-        while(j >= 1){
+        while(j > 0){
 
             int tmp=arr[0];
             arr[0] = arr[j];
             arr[j] = tmp;
 
-            // 从根节点开始调整，由于建堆的时候已经有序，所以可以从根节点开始
+            // 从根节点开始调整，建堆已经有序，可以从根节点开始
             shift(arr,0,--j);
 
         }
